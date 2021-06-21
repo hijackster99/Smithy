@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "smithy:block/malachite_ore"
+    }
+}

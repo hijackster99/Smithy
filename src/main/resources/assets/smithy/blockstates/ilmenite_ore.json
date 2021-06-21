@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": [
+            { "model": "smithy:block/ilmenite_ore" }
+        ]
+    }
+}

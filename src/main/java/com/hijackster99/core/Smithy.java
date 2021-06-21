@@ -55,7 +55,7 @@ public class Smithy {
 		SBlockOre ilmeniteOre = new SBlockOre("ilmenite_ore", 5.5f, 10, 10, 30, 0.0031f);
 		SBlockOre rutileOre = new SBlockOre("rutile_ore", 6.5f, 10, 10, 30, 0.0031f);
 		//Lithium
-		SBlockOre spodumeneOre = new SBlockOre("spodumene_ore", 7f, 10, 10, 30, 0.00003f);
+		//SBlockOre spodumeneOre = new SBlockOre("spodumene_ore", 7f, 10, 10, 30, 0.00003f);
 		//Tungsten
 		SBlockOre scheeliteOre = new SBlockOre("scheelite_ore", 5f, 6, 10, 30, 0.0000008f);
 		SBlockOre wolframiteOre = new SBlockOre("wolframite_ore", 4.5f, 6, 10, 30, 0.0000008f);
@@ -87,7 +87,7 @@ public class Smithy {
 										chromiteOre,
 										ilmeniteOre,
 										rutileOre,
-										spodumeneOre,
+										//spodumeneOre,
 										scheeliteOre,
 										wolframiteOre,
 										uraniniteOre);
@@ -136,7 +136,7 @@ public class Smithy {
 		SBlockItem ilmeniteOre = new SBlockItem(SBlocks.ORE.ILMENITE_ORE, null, 64);
 		SBlockItem rutileOre = new SBlockItem(SBlocks.ORE.RUTILE_ORE, null, 64);
 		//Lithium
-		SBlockItem spodumeneOre = new SBlockItem(SBlocks.ORE.SPODUMENE_ORE, null, 64);
+		//SBlockItem spodumeneOre = new SBlockItem(SBlocks.ORE.SPODUMENE_ORE, null, 64);
 		//Tungsten
 		SBlockItem scheeliteOre = new SBlockItem(SBlocks.ORE.SCHEELITE_ORE, null, 64);
 		SBlockItem wolframiteOre = new SBlockItem(SBlocks.ORE.WOLFRAMITE_ORE, null, 64);
@@ -168,7 +168,7 @@ public class Smithy {
 										chromiteOre,
 										ilmeniteOre,
 										rutileOre,
-										spodumeneOre,
+										//spodumeneOre,
 										scheeliteOre,
 										wolframiteOre,
 										uraniniteOre);

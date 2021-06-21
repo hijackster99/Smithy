@@ -90,9 +90,6 @@ public class SBlockItems {
 		@ObjectHolder(References.MODID + ":ilmenite_ore")
 		public static BlockItem ILMENITE_ORE;
 	
-		@ObjectHolder(References.MODID + ":leucoxene_ore")
-		public static BlockItem LEUCOXENE_ORE;
-	
 		@ObjectHolder(References.MODID + ":rutile_ore")
 		public static BlockItem RUTILE_ORE;
 	
@@ -110,13 +107,6 @@ public class SBlockItems {
 		//Uranium
 		@ObjectHolder(References.MODID + ":uraninite_ore")
 		public static BlockItem URANINITE_ORE;
-		
-		//Neodymium
-		@ObjectHolder(References.MODID + ":monazite_ore")
-		public static BlockItem MONAZITE_ORE;
-	
-		@ObjectHolder(References.MODID + ":bastnaesite_ore")
-		public static BlockItem BASTNAESITE_ORE;
 	}
 	
 }
