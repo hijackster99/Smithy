@@ -1,5 +1,7 @@
 package com.hijackster99.core;
 
+import net.minecraft.client.renderer.model.IBakedModel;
+
 public class Util {
 	
 	public static float getMinecraftHardness(float mohsHardness) {

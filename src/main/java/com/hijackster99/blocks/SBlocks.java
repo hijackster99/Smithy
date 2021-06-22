@@ -112,5 +112,12 @@ public class SBlocks {
 		public static SBlockOre URANINITE_ORE;
 		
 	}
+
+	//Blocks
+	@ObjectHolder(References.MODID + ":kiln_base")
+	public static SBlock KILN_BASE;
+	
+	@ObjectHolder(References.MODID + ":fired_kiln_base")
+	public static SBlock FIRED_KILN_BASE;
 	
 }

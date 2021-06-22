@@ -1,5 +1,6 @@
 package com.hijackster99.items.blockitems;
 
+import com.hijackster99.blocks.SBlockOre;
 import com.hijackster99.core.References;
 
 import net.minecraft.item.BlockItem;
@@ -108,5 +109,12 @@ public class SBlockItems {
 		@ObjectHolder(References.MODID + ":uraninite_ore")
 		public static BlockItem URANINITE_ORE;
 	}
+	
+	//Blocks
+	@ObjectHolder(References.MODID + ":kiln_base")
+	public static BlockItem KILN_BASE;
+
+	@ObjectHolder(References.MODID + ":fired_kiln_base")
+	public static BlockItem FIRED_KILN_BASE;
 	
 }

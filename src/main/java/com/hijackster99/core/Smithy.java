@@ -1,11 +1,15 @@
 package com.hijackster99.core;
 
+import com.hijackster99.blocks.KilnBase;
+import com.hijackster99.blocks.SBlock;
 import com.hijackster99.blocks.SBlockOre;
 import com.hijackster99.blocks.SBlocks;
 import com.hijackster99.items.blockitems.SBlockItem;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +17,8 @@ import net.minecraftforge.fml.common.Mod;
 @Mod(References.MODID)
 @Mod.EventBusSubscriber(modid = References.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Smithy {
+
+	
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -62,6 +68,10 @@ public class Smithy {
 		//Uranium
 		SBlockOre uraniniteOre = new SBlockOre("uraninite_ore", 5.5f, 10, 10, 60, 0.000003f);
 		
+		//Blocks
+		SBlock kilnBase = new KilnBase("kiln_base", Material.CLAY, 3f, 3f, ToolType.SHOVEL, 0, false, false);
+		SBlock firedKilnBase = new KilnBase("fired_kiln_base", Material.STONE, 3f, 3f, ToolType.PICKAXE, 0, false, true);
+		
 		event.getRegistry().registerAll(hematiteOre,
 										magnetiteOre,
 										chalcopyriteOre,
@@ -90,7 +100,9 @@ public class Smithy {
 										//spodumeneOre,
 										scheeliteOre,
 										wolframiteOre,
-										uraniniteOre);
+										uraniniteOre,
+										kilnBase,
+										firedKilnBase);
 	}
 
 	@SubscribeEvent
@@ -143,6 +155,10 @@ public class Smithy {
 		//Uranium
 		SBlockItem uraniniteOre = new SBlockItem(SBlocks.ORE.URANINITE_ORE, null, 64);
 		
+		//Blocks
+		SBlockItem kilnBase = new SBlockItem(SBlocks.KILN_BASE, null, 64);
+		SBlockItem firedKilnBase = new SBlockItem(SBlocks.FIRED_KILN_BASE, null, 64);
+		
 		event.getRegistry().registerAll(hematiteOre,
 										magnetiteOre,
 										chalcopyriteOre,
@@ -171,7 +187,9 @@ public class Smithy {
 										//spodumeneOre,
 										scheeliteOre,
 										wolframiteOre,
-										uraniniteOre);
+										uraniniteOre,
+										kilnBase,
+										firedKilnBase);
 	}
 	
 }

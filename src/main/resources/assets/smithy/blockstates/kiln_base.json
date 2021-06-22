@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": [
+            { "model": "smithy:block/kiln_base" }
+        ]
+    }
+}

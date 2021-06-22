@@ -1,0 +1,8 @@
+{
+    "parent": "forge:item/default",
+    "loader": "forge:obj",
+	"model": "smithy:models/block/kiln_base.obj",
+	"textures":{
+		"particle": "smithy:block/cob"
+	}
+}
