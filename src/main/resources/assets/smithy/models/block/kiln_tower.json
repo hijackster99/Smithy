@@ -1,0 +1,129 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "particle": "smithy:block/cob",
+        "cob": "smithy:block/cob"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "West",
+            "from": [ 4, 0, 6 ], 
+            "to": [ 6, 16, 10 ], 
+            "faces": {
+                "east": { "texture": "#cob", "uv": [ 6, 0, 10, 16 ] },
+                "west": { "texture": "#cob", "uv": [ 6, 0, 10, 16 ] },
+                "up": { "texture": "#cob", "uv": [ 0, 6, 2, 10 ] },
+                "down": { "texture": "#cob", "uv": [ 14, 6, 16, 10 ] }
+            }
+        },
+        {
+            "name": "East",
+            "from": [ 10, 0, 6 ], 
+            "to": [ 12, 16, 10 ], 
+            "faces": {
+                "east": { "texture": "#cob", "uv": [ 6, 0, 10, 16 ] },
+                "west": { "texture": "#cob", "uv": [ 6, 0, 10, 16 ] },
+                "up": { "texture": "#cob", "uv": [ 0, 6, 2, 10 ] },
+                "down": { "texture": "#cob", "uv": [ 14, 6, 16, 10 ] }
+            }
+        },
+        {
+            "name": "South",
+            "from": [ 6, 0, 10 ], 
+            "to": [ 10, 16, 12 ], 
+            "faces": {
+                "north": { "texture": "#cob", "uv": [ 6, 0, 10, 16 ] },
+                "south": { "texture": "#cob", "uv": [ 6, 0, 10, 16 ] },
+                "up": { "texture": "#cob", "uv": [ 6, 0, 10, 2 ] },
+                "down": { "texture": "#cob", "uv": [ 6, 14, 10, 16 ] }
+            }
+        },
+        {
+            "name": "North",
+            "from": [ 6, 0, 4 ], 
+            "to": [ 10, 16, 6 ], 
+            "faces": {
+                "north": { "texture": "#cob", "uv": [ 6, 0, 10, 16 ] },
+                "south": { "texture": "#cob", "uv": [ 6, 0, 10, 16 ] },
+                "up": { "texture": "#cob", "uv": [ 6, 0, 10, 2 ] },
+                "down": { "texture": "#cob", "uv": [ 6, 14, 10, 16 ] }
+            }
+        },
+        {
+            "name": "NW",
+            "from": [ 4, 0, 4 ], 
+            "to": [ 6, 16, 6 ], 
+            "faces": {
+                "north": { "texture": "#cob", "uv": [ 10, 0, 12, 16 ] },
+                "west": { "texture": "#cob", "uv": [ 4, 0, 6, 16 ] },
+                "up": { "texture": "#cob", "uv": [ 10, 0, 12, 2 ] },
+                "down": { "texture": "#cob", "uv": [ 10, 14, 12, 16 ] }
+            }
+        },
+        {
+            "name": "NE",
+            "from": [ 10, 0, 4 ], 
+            "to": [ 12, 16, 6 ], 
+            "faces": {
+                "north": { "texture": "#cob", "uv": [ 4, 0, 6, 16 ] },
+                "east": { "texture": "#cob", "uv": [ 10, 0, 12, 16 ] },
+                "up": { "texture": "#cob", "uv": [ 4, 0, 6, 2 ] },
+                "down": { "texture": "#cob", "uv": [ 4, 14, 6, 16 ] }
+            }
+        },
+        {
+            "name": "SW",
+            "from": [ 4, 0, 10 ], 
+            "to": [ 6, 16, 12 ], 
+            "faces": {
+                "south": { "texture": "#cob", "uv": [ 4, 0, 6, 16 ] },
+                "west": { "texture": "#cob", "uv": [ 10, 0, 12, 16 ] },
+                "up": { "texture": "#cob", "uv": [ 4, 0, 6, 2 ] },
+                "down": { "texture": "#cob", "uv": [ 4, 14, 6, 16 ] }
+            }
+        },
+        {
+            "name": "SE",
+            "from": [ 10, 0, 10 ], 
+            "to": [ 12, 16, 12 ], 
+            "faces": {
+                "east": { "texture": "#cob", "uv": [ 4, 0, 6, 16 ] },
+                "south": { "texture": "#cob", "uv": [ 10, 0, 12, 16 ] },
+                "up": { "texture": "#cob", "uv": [ 10, 0, 12, 2 ] },
+                "down": { "texture": "#cob", "uv": [ 10, 14, 12, 16 ] }
+            }
+        }
+    ]
+}
