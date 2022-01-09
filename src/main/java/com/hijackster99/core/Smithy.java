@@ -1,11 +1,15 @@
 package com.hijackster99.core;
 
+import java.util.ArrayList;
+
 import com.hijackster99.blocks.SBlockOre;
 import com.hijackster99.blocks.SBlocks;
+import com.hijackster99.items.SItem;
 import com.hijackster99.items.blockitems.SBlockItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,7 +19,56 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = References.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Smithy {
 
+	static ArrayList<String> oreNames;
 	
+	public Smithy() {
+		oreNames = new ArrayList<String>();
+		//Iron
+		oreNames.add("hematite");
+		oreNames.add("magnetite");
+		//Copper
+		oreNames.add("chalcopyrite");
+		oreNames.add("azurite");
+		oreNames.add("malachite");
+		oreNames.add("copper");
+		//Tin
+		oreNames.add("cassiterite");
+		//Zinc
+		oreNames.add("sphalerite");
+		//Coal
+		oreNames.add("anthracite");
+		oreNames.add("bituminous");
+		oreNames.add("subbituminous");
+		oreNames.add("lignite");
+		//Aluminum
+		oreNames.add("bauxite");
+		//Silver
+		oreNames.add("argentite");
+		oreNames.add("silver");
+		//Lead
+		oreNames.add("galena");
+		//Bismuth
+		oreNames.add("bismuthinite");
+		oreNames.add("bismite");
+		//Cadmium
+		oreNames.add("greenockite");
+		//Nickel
+		oreNames.add("pentlandite");
+		oreNames.add("garnierite");
+		oreNames.add("limonite");
+		//Chromium
+		oreNames.add("chromite");
+		//Titanium
+		oreNames.add("ilmenite");
+		oreNames.add("rutile");
+		//Lithium
+		//oreNames.add("spodumene");
+		//Tungsten
+		oreNames.add("scheelite");
+		oreNames.add("wolframite");
+		//Uranium
+		oreNames.add("uraninite");
+	}
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -103,52 +156,50 @@ public class Smithy {
 		//Blocks
 		
 		//Iron
-		SBlockItem hematiteOre = new SBlockItem(SBlocks.ORE.HEMATITE_ORE, null, 64);
-		SBlockItem magnetiteOre = new SBlockItem(SBlocks.ORE.MAGNETITE_ORE, null, 64);
+		SBlockItem hematiteOre = new SBlockItem(SBlocks.ORE.HEMATITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem magnetiteOre = new SBlockItem(SBlocks.ORE.MAGNETITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Copper
-		SBlockItem chalcopyriteOre = new SBlockItem(SBlocks.ORE.CHALCOPYRITE_ORE, null, 64);
-		SBlockItem azuriteOre = new SBlockItem(SBlocks.ORE.AZURITE_ORE, null, 64);
-		SBlockItem malachiteOre = new SBlockItem(SBlocks.ORE.MALACHITE_ORE, null, 64);
-		SBlockItem copperOre = new SBlockItem(SBlocks.ORE.COPPER_ORE, null, 64);
+		SBlockItem chalcopyriteOre = new SBlockItem(SBlocks.ORE.CHALCOPYRITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem azuriteOre = new SBlockItem(SBlocks.ORE.AZURITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem malachiteOre = new SBlockItem(SBlocks.ORE.MALACHITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem copperOre = new SBlockItem(SBlocks.ORE.COPPER_ORE, ItemGroup.TAB_MISC, 64);
 		//Tin
-		SBlockItem cassiteriteOre = new SBlockItem(SBlocks.ORE.CASSITERITE_ORE, null, 64);
+		SBlockItem cassiteriteOre = new SBlockItem(SBlocks.ORE.CASSITERITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Zinc
-		SBlockItem sphaleriteOre = new SBlockItem(SBlocks.ORE.SPHALERITE_ORE, null, 64);
+		SBlockItem sphaleriteOre = new SBlockItem(SBlocks.ORE.SPHALERITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Coal
-		SBlockItem anthraciteOre = new SBlockItem(SBlocks.ORE.ANTHRACITE_ORE, null, 64);
-		SBlockItem bituminousOre = new SBlockItem(SBlocks.ORE.BITUMINOUS_ORE, null, 64);
-		SBlockItem subbituminousOre = new SBlockItem(SBlocks.ORE.SUBBITUMINOUS_ORE, null, 64);
-		SBlockItem ligniteOre = new SBlockItem(SBlocks.ORE.LIGNITE_ORE, null, 64);
+		SBlockItem anthraciteOre = new SBlockItem(SBlocks.ORE.ANTHRACITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem bituminousOre = new SBlockItem(SBlocks.ORE.BITUMINOUS_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem subbituminousOre = new SBlockItem(SBlocks.ORE.SUBBITUMINOUS_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem ligniteOre = new SBlockItem(SBlocks.ORE.LIGNITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Aluminum
-		SBlockItem bauxiteOre = new SBlockItem(SBlocks.ORE.BAUXITE_ORE, null, 64);
+		SBlockItem bauxiteOre = new SBlockItem(SBlocks.ORE.BAUXITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Silver
-		SBlockItem argentiteOre = new SBlockItem(SBlocks.ORE.ARGENTITE_ORE, null, 64);
-		SBlockItem silverOre = new SBlockItem(SBlocks.ORE.SILVER_ORE, null, 64);
+		SBlockItem argentiteOre = new SBlockItem(SBlocks.ORE.ARGENTITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem silverOre = new SBlockItem(SBlocks.ORE.SILVER_ORE, ItemGroup.TAB_MISC, 64);
 		//Lead
-		SBlockItem galenaOre = new SBlockItem(SBlocks.ORE.GALENA_ORE, null, 64);
+		SBlockItem galenaOre = new SBlockItem(SBlocks.ORE.GALENA_ORE, ItemGroup.TAB_MISC, 64);
 		//Bismuth
-		SBlockItem bismuthiniteOre = new SBlockItem(SBlocks.ORE.BISMUTHINITE_ORE, null, 64);
-		SBlockItem bismiteOre = new SBlockItem(SBlocks.ORE.BISMITE_ORE, null, 64);
+		SBlockItem bismuthiniteOre = new SBlockItem(SBlocks.ORE.BISMUTHINITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem bismiteOre = new SBlockItem(SBlocks.ORE.BISMITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Cadmium
-		SBlockItem greenockiteOre = new SBlockItem(SBlocks.ORE.GREENOCKITE_ORE, null, 64);
+		SBlockItem greenockiteOre = new SBlockItem(SBlocks.ORE.GREENOCKITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Nickel
-		SBlockItem pentlanditeOre = new SBlockItem(SBlocks.ORE.PENTLANDITE_ORE, null, 64);
-		SBlockItem garnieriteOre = new SBlockItem(SBlocks.ORE.GARNIERITE_ORE, null, 64);
-		SBlockItem limoniteOre = new SBlockItem(SBlocks.ORE.LIMONITE_ORE, null, 64);
+		SBlockItem pentlanditeOre = new SBlockItem(SBlocks.ORE.PENTLANDITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem garnieriteOre = new SBlockItem(SBlocks.ORE.GARNIERITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem limoniteOre = new SBlockItem(SBlocks.ORE.LIMONITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Chromium
-		SBlockItem chromiteOre = new SBlockItem(SBlocks.ORE.CHROMITE_ORE, null, 64);
+		SBlockItem chromiteOre = new SBlockItem(SBlocks.ORE.CHROMITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Titanium
-		SBlockItem ilmeniteOre = new SBlockItem(SBlocks.ORE.ILMENITE_ORE, null, 64);
-		SBlockItem rutileOre = new SBlockItem(SBlocks.ORE.RUTILE_ORE, null, 64);
+		SBlockItem ilmeniteOre = new SBlockItem(SBlocks.ORE.ILMENITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem rutileOre = new SBlockItem(SBlocks.ORE.RUTILE_ORE, ItemGroup.TAB_MISC, 64);
 		//Lithium
-		//SBlockItem spodumeneOre = new SBlockItem(SBlocks.ORE.SPODUMENE_ORE, null, 64);
+		//SBlockItem spodumeneOre = new SBlockItem(SBlocks.ORE.SPODUMENE_ORE, ItemGroup.TAB_MISC, 64);
 		//Tungsten
-		SBlockItem scheeliteOre = new SBlockItem(SBlocks.ORE.SCHEELITE_ORE, null, 64);
-		SBlockItem wolframiteOre = new SBlockItem(SBlocks.ORE.WOLFRAMITE_ORE, null, 64);
+		SBlockItem scheeliteOre = new SBlockItem(SBlocks.ORE.SCHEELITE_ORE, ItemGroup.TAB_MISC, 64);
+		SBlockItem wolframiteOre = new SBlockItem(SBlocks.ORE.WOLFRAMITE_ORE, ItemGroup.TAB_MISC, 64);
 		//Uranium
-		SBlockItem uraniniteOre = new SBlockItem(SBlocks.ORE.URANINITE_ORE, null, 64);
-		
-		//Blocks
+		SBlockItem uraniniteOre = new SBlockItem(SBlocks.ORE.URANINITE_ORE, ItemGroup.TAB_MISC, 64);
 		
 		event.getRegistry().registerAll(hematiteOre,
 										magnetiteOre,
@@ -179,6 +230,31 @@ public class Smithy {
 										scheeliteOre,
 										wolframiteOre,
 										uraniniteOre);
+		
+
+//		//CHUNK
+//		
+//		for(String name : oreNames) {
+//			SItem item = new SItem(ItemGroup.TAB_MISC, 64, name + "_chunk");
+//			event.getRegistry().register(item);
+//		}
+//		
+//		//POWDER
+//		
+//		for(String name : oreNames) {
+//			SItem item = new SItem(ItemGroup.TAB_MISC, 64, name + "_powder");
+//			event.getRegistry().register(item);
+//		}
+		
+		SItem hematiteChunk = new SItem(ItemGroup.TAB_MISC, 64, "hematite_chunk");
+		event.getRegistry().register(hematiteChunk);
+		SItem hematitePowder = new SItem(ItemGroup.TAB_MISC, 64, "hematite_powder");
+		event.getRegistry().register(hematitePowder);
+		SItem hematiteConcentrated = new SItem(ItemGroup.TAB_MISC, 64, "hematite_concentrated");
+		event.getRegistry().register(hematiteConcentrated);
+		
+		SItem pigIronIngot = new SItem(ItemGroup.TAB_MISC, 64, "pig_iron_ingot");
+		event.getRegistry().register(pigIronIngot);
 	}
 	
 	@SubscribeEvent
