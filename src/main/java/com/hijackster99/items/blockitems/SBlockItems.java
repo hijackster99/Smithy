@@ -109,17 +109,4 @@ public class SBlockItems {
 		public static BlockItem URANINITE_ORE;
 	}
 	
-	//Blocks
-	@ObjectHolder(References.MODID + ":kiln_base")
-	public static BlockItem KILN_BASE;
-
-	@ObjectHolder(References.MODID + ":fired_kiln_base")
-	public static BlockItem FIRED_KILN_BASE;
-
-	@ObjectHolder(References.MODID + ":kiln_tower")
-	public static BlockItem KILN_TOWER;
-
-	@ObjectHolder(References.MODID + ":fired_kiln_tower")
-	public static BlockItem FIRED_KILN_TOWER;
-	
 }

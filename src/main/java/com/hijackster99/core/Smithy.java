@@ -1,18 +1,12 @@
 package com.hijackster99.core;
 
-import com.hijackster99.blocks.KilnBase;
-import com.hijackster99.blocks.KilnTower;
-import com.hijackster99.blocks.SBlock;
 import com.hijackster99.blocks.SBlockOre;
 import com.hijackster99.blocks.SBlocks;
 import com.hijackster99.items.blockitems.SBlockItem;
-import com.hijackster99.tileentities.KilnTile;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -72,11 +66,6 @@ public class Smithy {
 		SBlockOre uraniniteOre = new SBlockOre("uraninite_ore", 5.5f, 10, 10, 60, 0.000003f);
 		
 		//Blocks
-		SBlock kilnBase = new KilnBase("kiln_base", Material.CLAY, 3f, 3f, ToolType.SHOVEL, 0, false, false);
-		SBlock firedKilnBase = new KilnBase("fired_kiln_base", Material.STONE, 3f, 3f, ToolType.PICKAXE, 0, false, true);
-		
-		SBlock kilnTower = new KilnTower("kiln_tower", Material.CLAY, 3f, 3f, ToolType.SHOVEL, 0, false, false);
-		SBlock firedKilnTower = new KilnTower("fired_kiln_tower", Material.STONE, 3f, 3f, ToolType.PICKAXE, 0, false, true);
 		
 		event.getRegistry().registerAll(hematiteOre,
 										magnetiteOre,
@@ -106,11 +95,7 @@ public class Smithy {
 										//spodumeneOre,
 										scheeliteOre,
 										wolframiteOre,
-										uraniniteOre,
-										kilnBase,
-										firedKilnBase,
-										kilnTower,
-										firedKilnTower);
+										uraniniteOre);
 	}
 
 	@SubscribeEvent
@@ -164,11 +149,6 @@ public class Smithy {
 		SBlockItem uraniniteOre = new SBlockItem(SBlocks.ORE.URANINITE_ORE, null, 64);
 		
 		//Blocks
-		SBlockItem kilnBase = new SBlockItem(SBlocks.KILN_BASE, null, 64);
-		SBlockItem firedKilnBase = new SBlockItem(SBlocks.FIRED_KILN_BASE, null, 64);
-
-		SBlockItem kilnTower = new SBlockItem(SBlocks.KILN_TOWER, null, 64);
-		SBlockItem firedKilnTower = new SBlockItem(SBlocks.FIRED_KILN_TOWER, null, 64);
 		
 		event.getRegistry().registerAll(hematiteOre,
 										magnetiteOre,
@@ -198,19 +178,12 @@ public class Smithy {
 										//spodumeneOre,
 										scheeliteOre,
 										wolframiteOre,
-										uraniniteOre,
-										kilnBase,
-										firedKilnBase,
-										kilnTower,
-										firedKilnTower);
+										uraniniteOre);
 	}
 	
 	@SubscribeEvent
 	public static void registerTiles(RegistryEvent.Register<TileEntityType<?>> event) {
-		TileEntityType<KilnTile> kilnType = TileEntityType.Builder.of(KilnTile::new, SBlocks.FIRED_KILN_BASE, SBlocks.KILN_BASE).build(null);
-		kilnType.setRegistryName(References.MODID, "kiln");
 		
-		event.getRegistry().registerAll(kilnType);
 	}
 	
 }
