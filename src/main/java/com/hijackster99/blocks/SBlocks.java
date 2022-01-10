@@ -113,4 +113,7 @@ public class SBlocks {
 		
 	}
 	
+	@ObjectHolder(References.MODID + ":gravity_filter")
+	public static SBlock GRAVITY_FILTER;
+	
 }

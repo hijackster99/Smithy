@@ -6,6 +6,7 @@ import com.hijackster99.blocks.SBlockOre;
 import com.hijackster99.blocks.SBlocks;
 import com.hijackster99.items.SItem;
 import com.hijackster99.items.blockitems.SBlockItem;
+import com.hijackster99.tileentities.GravityFilterTile;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -259,7 +260,9 @@ public class Smithy {
 	
 	@SubscribeEvent
 	public static void registerTiles(RegistryEvent.Register<TileEntityType<?>> event) {
-		
+		TileEntityType<GravityFilterTile> gravityFilter = TileEntityType.Builder.of(GravityFilterTile::new, SBlocks.GRAVITY_FILTER).build(null);
+		gravityFilter.setRegistryName(References.MODID, "gravity_filter");
+		event.getRegistry().register(gravityFilter);
 	}
 	
 }

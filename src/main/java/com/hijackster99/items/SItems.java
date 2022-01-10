@@ -313,4 +313,11 @@ public class SItems {
 		public static Item URANINITE_CONCENTRATED;
 	}
 	
+	public static class INGOT {
+		
+		@ObjectHolder(References.MODID + ":pig_iron_ingot")
+		public static Item PIG_IRON_INGOT;
+		
+	}
+	
 }
