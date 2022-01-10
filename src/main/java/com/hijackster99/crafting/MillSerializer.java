@@ -15,14 +15,14 @@ import net.minecraft.util.registry.Registry;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 
-public class GravityFilterSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<GravityFilterRecipe> {
-
-	@ObjectHolder(References.MODID + ":gravity_filter_serializer")
-	public static IRecipeSerializer<?> GRAVITY_FILTER_SERIALIZER;
+public class MillSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<MillRecipe> {
+	
+	@ObjectHolder(References.MODID + ":mill_serializer")
+	public static IRecipeSerializer<?> MILL_SERIALIZER;
 	
 	@SuppressWarnings("deprecation")
 	@Override
-	public GravityFilterRecipe fromJson(ResourceLocation loc, JsonObject json) {
+	public MillRecipe fromJson(ResourceLocation loc, JsonObject json) {
 		String group = JSONUtils.getAsString(json, "group", "");
 		
 		JsonElement ingrJson = JSONUtils.getAsJsonObject(json, "ingredient");
@@ -37,26 +37,25 @@ public class GravityFilterSerializer extends ForgeRegistryEntry<IRecipeSerialize
 			result = new ItemStack(Registry.ITEM.get(new ResourceLocation(JSONUtils.getAsString(json, "result"))));
 		}
 		
-		return new GravityFilterRecipe(loc, group, ingr, result);
+		return new MillRecipe(loc, group, ingr, result);
 	}
 
 	@Override
-	public GravityFilterRecipe fromNetwork(ResourceLocation loc, PacketBuffer buffer) {
+	public MillRecipe fromNetwork(ResourceLocation loc, PacketBuffer buffer) {
 		int groupLength = buffer.readInt();
 		String group = new String(buffer.readByteArray(groupLength));
 		Ingredient ingr = Ingredient.fromNetwork(buffer);
 		ItemStack result = buffer.readItem();
 		
-		return new GravityFilterRecipe(loc, group, ingr, result);
+		return new MillRecipe(loc, group, ingr, result);
 	}
 
 	@Override
-	public void toNetwork(PacketBuffer buffer, GravityFilterRecipe recipe) {
+	public void toNetwork(PacketBuffer buffer, MillRecipe recipe) {
 		buffer.writeInt(recipe.getGroup().getBytes().length);
 		buffer.writeByteArray(recipe.getGroup().getBytes());
 		recipe.getIngredients().get(0).toNetwork(buffer);
 		buffer.writeItem(recipe.getResultItem());
 		
 	}
-
 }

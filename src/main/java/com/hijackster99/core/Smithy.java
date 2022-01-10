@@ -2,16 +2,22 @@ package com.hijackster99.core;
 
 import java.util.ArrayList;
 
+import com.hijackster99.blocks.SBlock;
 import com.hijackster99.blocks.SBlockOre;
 import com.hijackster99.blocks.SBlocks;
+import com.hijackster99.crafting.GravityFilterSerializer;
+import com.hijackster99.crafting.MillSerializer;
 import com.hijackster99.items.SItem;
 import com.hijackster99.items.blockitems.SBlockItem;
 import com.hijackster99.tileentities.GravityFilterTile;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -121,6 +127,9 @@ public class Smithy {
 		
 		//Blocks
 		
+		SBlock gravityFilter = new SBlock("gravity_filter", Material.METAL, 2, 2, ToolType.PICKAXE, 1, true);
+		SBlock millBase = new SBlock("mill_base", Material.STONE, 2, 2, ToolType.PICKAXE, 1, true);
+		
 		event.getRegistry().registerAll(hematiteOre,
 										magnetiteOre,
 										chalcopyriteOre,
@@ -149,7 +158,9 @@ public class Smithy {
 										//spodumeneOre,
 										scheeliteOre,
 										wolframiteOre,
-										uraniniteOre);
+										uraniniteOre,
+										gravityFilter,
+										millBase);
 	}
 
 	@SubscribeEvent
@@ -202,6 +213,11 @@ public class Smithy {
 		//Uranium
 		SBlockItem uraniniteOre = new SBlockItem(SBlocks.ORE.URANINITE_ORE, ItemGroup.TAB_MISC, 64);
 		
+		//Blocks
+		
+		SBlockItem gravityFilter = new SBlockItem(SBlocks.GRAVITY_FILTER, ItemGroup.TAB_MISC, 64);
+		SBlockItem millBase = new SBlockItem(SBlocks.MILL, ItemGroup.TAB_MISC, 64);
+		
 		event.getRegistry().registerAll(hematiteOre,
 										magnetiteOre,
 										chalcopyriteOre,
@@ -230,7 +246,9 @@ public class Smithy {
 										//spodumeneOre,
 										scheeliteOre,
 										wolframiteOre,
-										uraniniteOre);
+										uraniniteOre,
+										gravityFilter,
+										millBase);
 		
 
 //		//CHUNK
@@ -263,6 +281,21 @@ public class Smithy {
 		TileEntityType<GravityFilterTile> gravityFilter = TileEntityType.Builder.of(GravityFilterTile::new, SBlocks.GRAVITY_FILTER).build(null);
 		gravityFilter.setRegistryName(References.MODID, "gravity_filter");
 		event.getRegistry().register(gravityFilter);
+		
+		TileEntityType<GravityFilterTile> millBase = TileEntityType.Builder.of(GravityFilterTile::new, SBlocks.MILL).build(null);
+		millBase.setRegistryName(References.MODID, "mill_base");
+		event.getRegistry().register(millBase);
+	}
+	
+	@SubscribeEvent
+	public static void registerRecipeSerializers(RegistryEvent.Register<IRecipeSerializer<?>> event) {
+		GravityFilterSerializer gravityFilterSer = new GravityFilterSerializer();
+		gravityFilterSer.setRegistryName(References.MODID, "gravity_filter_serializer");
+		event.getRegistry().register(gravityFilterSer);
+		
+		MillSerializer millSer = new MillSerializer();
+		millSer.setRegistryName(References.MODID, "mill_serializer");
+		event.getRegistry().register(millSer);
 	}
 	
 }

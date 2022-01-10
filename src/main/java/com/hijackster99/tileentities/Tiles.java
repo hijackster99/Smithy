@@ -9,5 +9,8 @@ public class Tiles {
 	
 	@ObjectHolder(References.MODID + ":gravity_filter")
 	public static TileEntityType<GravityFilterTile> GRAVITY_FILTER;
+
+	@ObjectHolder(References.MODID + ":mill_base")
+	public static TileEntityType<GravityFilterTile> MILL;
 	
 }

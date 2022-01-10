@@ -109,4 +109,10 @@ public class SBlockItems {
 		public static BlockItem URANINITE_ORE;
 	}
 	
+	@ObjectHolder(References.MODID + ":gravity_filter")
+	public static BlockItem GRAVITY_FILTER;
+	
+	@ObjectHolder(References.MODID + ":mill_base")
+	public static BlockItem MILL;
+	
 }

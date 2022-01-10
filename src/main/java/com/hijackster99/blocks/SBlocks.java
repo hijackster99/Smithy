@@ -116,4 +116,7 @@ public class SBlocks {
 	@ObjectHolder(References.MODID + ":gravity_filter")
 	public static SBlock GRAVITY_FILTER;
 	
+	@ObjectHolder(References.MODID + ":mill_base")
+	public static SBlock MILL;
+	
 }

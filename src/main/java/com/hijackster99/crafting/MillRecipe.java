@@ -12,43 +12,43 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class GravityFilterRecipe implements IRecipe<Inventory> {
+public class MillRecipe implements IRecipe<Inventory>{
 
-	public static final IRecipeType<GravityFilterRecipe> GRAVITY_FILTER_RECIPE = IRecipeType.register("gravity_filter_recipe");
+	public static final IRecipeType<MillRecipe> MILL_RECIPE = IRecipeType.register("mill_recipe");
 	private ResourceLocation id;
 	private String group;
-	private ItemStack result;
 	private Ingredient ingr;
+	private ItemStack result;
 	
-	public GravityFilterRecipe(ResourceLocation id, String group, Ingredient ingr, ItemStack result) {
+	public MillRecipe(ResourceLocation id, String group, Ingredient ingr, ItemStack result) {
 		this.id = id;
 		this.group = group;
-		this.result = result;
 		this.ingr = ingr;
+		this.result = result;
 	}
 	
-	public GravityFilterRecipe() {
+	public MillRecipe() {
 		this.id = new ResourceLocation(References.MODID, "");
 		this.group = "";
-		this.result = ItemStack.EMPTY;
 		this.ingr = Ingredient.EMPTY;
+		this.result = ItemStack.EMPTY;
 	}
 	
 	@Override
 	public boolean matches(Inventory inv, World world) {
-		if(ingr.test(inv.getItem(0))) return true;
+		if(ingr.test(inv.getItem(1)) || ingr.test(inv.getItem(0))) return true;
 		return false;
 	}
 
 	@Override
 	public ItemStack assemble(Inventory inv) {
-		inv.removeItem(0, 1);
-		inv.setItem(1, result);
+		inv.removeItem(1, 1);
+		inv.setItem(2, result);
 		return result;
 	}
 
 	@Override
-	public boolean canCraftInDimensions(int x, int y) {
+	public boolean canCraftInDimensions(int p_194133_1_, int p_194133_2_) {
 		return true;
 	}
 
@@ -64,12 +64,12 @@ public class GravityFilterRecipe implements IRecipe<Inventory> {
 
 	@Override
 	public IRecipeSerializer<?> getSerializer() {
-		return GravityFilterSerializer.GRAVITY_FILTER_SERIALIZER;
+		return MillSerializer.MILL_SERIALIZER;
 	}
 
 	@Override
 	public IRecipeType<?> getType() {
-		return GRAVITY_FILTER_RECIPE;
+		return MILL_RECIPE;
 	}
 	
 	@Override
@@ -81,7 +81,6 @@ public class GravityFilterRecipe implements IRecipe<Inventory> {
 	public NonNullList<Ingredient> getIngredients() {
 		NonNullList<Ingredient> ingrs = NonNullList.create();
 		ingrs.add(ingr);
-		
 		return ingrs;
 	}
 
