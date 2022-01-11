@@ -2,6 +2,8 @@ package com.hijackster99.core;
 
 import java.util.ArrayList;
 
+import com.hijackster99.blocks.GravityFilterBlock;
+import com.hijackster99.blocks.MillBlock;
 import com.hijackster99.blocks.SBlock;
 import com.hijackster99.blocks.SBlockOre;
 import com.hijackster99.blocks.SBlocks;
@@ -127,8 +129,8 @@ public class Smithy {
 		
 		//Blocks
 		
-		SBlock gravityFilter = new SBlock("gravity_filter", Material.METAL, 2, 2, ToolType.PICKAXE, 1, true);
-		SBlock millBase = new SBlock("mill_base", Material.STONE, 2, 2, ToolType.PICKAXE, 1, true);
+		SBlock gravityFilter = new GravityFilterBlock("gravity_filter", Material.METAL, 2, 2, ToolType.PICKAXE, 1, true);
+		SBlock millBase = new MillBlock("mill_base", Material.STONE, 2, 2, ToolType.PICKAXE, 1, true);
 		
 		event.getRegistry().registerAll(hematiteOre,
 										magnetiteOre,

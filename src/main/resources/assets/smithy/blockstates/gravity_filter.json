@@ -1,0 +1,10 @@
+{
+    "variants": {
+    "water=false": {
+      "model": "smithy:block/gravity_filter"
+    },
+    "water=true": {
+      "model": "smithy:block/gravity_filter_water"
+    }
+	}
+}

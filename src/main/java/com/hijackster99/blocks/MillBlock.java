@@ -8,9 +8,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockReader;
 import net.minecraftforge.common.ToolType;
 
-public class Mill extends SBlock {
+public class MillBlock extends SBlock {
 
-	public Mill(String name, Material mat, float hardness, float resistance, ToolType tool, int miningLevel,
+	public MillBlock(String name, Material mat, float hardness, float resistance, ToolType tool, int miningLevel,
 			boolean requiresTool) {
 		super(name, mat, hardness, resistance, tool, miningLevel, requiresTool);
 	}
